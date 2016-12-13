@@ -6,6 +6,7 @@
 $ autoreconf -i -f
 $ ./configure
 $ make
+$ ./test_takao_mincho
   -> out.pdf
 ```
 
