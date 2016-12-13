@@ -1,0 +1,9 @@
+depcomp
+aclocal.m4
+config.h.in~
+install-sh
+autom4te.cache
+configure
+missing
+compile
+test_takao_mincho
