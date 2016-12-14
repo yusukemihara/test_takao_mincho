@@ -1,4 +1,15 @@
+#if 0
+#!/bin/bash
+src=$0
+obj=${src%.*}
+gcc -g -Wl,--no-as-needed `pkg-config --cflags --libs pango cairo pangocairo` -o $obj $src
+$obj
+exit
+#endif
+
+#if 0
 #include <config.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
