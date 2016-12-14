@@ -7,9 +7,6 @@ $obj
 exit
 #endif
 
-#if 0
-#include <config.h>
-#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -57,7 +54,7 @@ draw_string(
   real yadv;
   cairo_set_source_rgba (cr, 0.0, 0.0, 0.0, 1.0);
   cairo_save (cr);
-  /* alignment calculation done by pangocairo? */
+
   pango_layout_set_alignment (layout, PANGO_ALIGN_LEFT);
   pango_layout_set_text (layout, text, -1);
   {
@@ -69,7 +66,7 @@ draw_string(
     cairo_move_to (cr, x, y - (double)bline / PANGO_SCALE);
     pango_layout_iter_free (iter);
   }
-  /* does this hide bug #341481? */
+
   pango_cairo_update_context (cr, pango_layout_get_context (layout));
   pango_layout_context_changed (layout);
 
