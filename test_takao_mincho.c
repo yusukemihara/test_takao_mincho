@@ -28,7 +28,7 @@ typedef double real;
 
 #define INCH  (2.54)
 #define DPI   (72.0)
-#define SCALE (DPI/INCH);
+#define SCALE (DPI/INCH)
 
 static void
 set_font(
@@ -37,8 +37,12 @@ set_font(
   real ab_size)
 {
   PangoFontDescription* pfd = pango_font_description_new();
+
+  pango_font_description_set_weight(pfd, PANGO_WEIGHT_NORMAL);
+  pango_font_description_set_style(pfd, PANGO_STYLE_NORMAL);
+
   pango_font_description_set_family(pfd, family);
-  pango_font_description_set_absolute_size (pfd, (int)(ab_size * PANGO_SCALE));
+  pango_font_description_set_absolute_size (pfd, (int)(ab_size));
   pango_layout_set_font_description (layout, pfd);
   pango_font_description_free (pfd);
 }
@@ -95,12 +99,36 @@ main(
   cr = cairo_create(surface);
   layout = pango_cairo_create_layout(cr);
 
-  x = 3.0 * SCALE;
-  y = 3.0 * SCALE;
-  for(i=0; i<10; i++) {
-    set_font(layout,"TakaoMincho",(i+1)*5);
-    y += draw_string(cr,layout,x,y,"あいうえおかきくけこ") + 0.01 * SCALE;
-  }
+  x = 1.0 * SCALE;
+  y = 2.0 * SCALE;
+
+  set_font(layout,"TakaoMincho", 6400);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  cairo_set_line_width(cr,1.0);
+  cairo_set_dash(cr,NULL,0,0);
+  cairo_set_source_rgba(cr,0.0,0.0,0.0,1.0);
+  cairo_rectangle(cr, 0.95 * SCALE, 1.5 * SCALE, (5.6) * SCALE, (0.9) * SCALE);
+  cairo_stroke(cr);
+
+  //
+  y = 3.4 * SCALE;
+  set_font(layout,"TakaoMincho", 12800);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  cairo_set_line_width(cr,1.0);
+  cairo_set_dash(cr,NULL,0,0);
+  cairo_set_source_rgba(cr,0.0,0.0,0.0,1.0);
+  cairo_rectangle(cr, 0.95 * SCALE, 2.75 * SCALE, (11.2) * SCALE, (0.9) * SCALE);
+  cairo_stroke(cr);
+
+  y = 5.0 * SCALE;
+  set_font(layout,"TakaoMincho", 12800 * 2);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  y = 7.0 * SCALE;
+  set_font(layout,"TakaoMincho", 12800 * 3);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
 
   cairo_show_page(cr);
   cairo_surface_finish(surface);
