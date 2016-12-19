@@ -116,6 +116,26 @@ main(
   set_font(layout,"TakaoMincho", 12800);
   y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
 
+  y = 3.5 * SCALE;
+  set_font(layout,"TakaoMincho", 12700);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  y = 3.6 * SCALE;
+  set_font(layout,"TakaoMincho", 12600);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  y = 3.7 * SCALE;
+  set_font(layout,"TakaoMincho", 12500);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  y = 3.8 * SCALE;
+  set_font(layout,"TakaoMincho", 12400);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
+  y = 3.9 * SCALE;
+  set_font(layout,"TakaoMincho", 12300);
+  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+
   cairo_set_line_width(cr,1.0);
   cairo_set_dash(cr,NULL,0,0);
   cairo_set_source_rgba(cr,0.0,0.0,0.0,1.0);
