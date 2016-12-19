@@ -99,56 +99,19 @@ main(
   cr = cairo_create(surface);
   layout = pango_cairo_create_layout(cr);
 
+  cairo_set_line_width(cr,1.0);
+  cairo_set_dash(cr,NULL,0,0);
+  cairo_set_source_rgba(cr,0.0,0.0,0.0,1.0);
+  cairo_rectangle(cr, 0.95 * SCALE, 2.75 * SCALE, (17.3) * SCALE, (0.9) * SCALE);
+  cairo_stroke(cr);
+
   x = 1.0 * SCALE;
-  y = 2.0 * SCALE;
-
-  set_font(layout,"TakaoMincho", 6400);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  cairo_set_line_width(cr,1.0);
-  cairo_set_dash(cr,NULL,0,0);
-  cairo_set_source_rgba(cr,0.0,0.0,0.0,1.0);
-  cairo_rectangle(cr, 0.95 * SCALE, 1.5 * SCALE, (5.6) * SCALE, (0.9) * SCALE);
-  cairo_stroke(cr);
-
-  //
   y = 3.4 * SCALE;
-  set_font(layout,"TakaoMincho", 12800);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
 
-  y = 3.5 * SCALE;
-  set_font(layout,"TakaoMincho", 12700);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  y = 3.6 * SCALE;
-  set_font(layout,"TakaoMincho", 12600);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  y = 3.7 * SCALE;
-  set_font(layout,"TakaoMincho", 12500);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  y = 3.8 * SCALE;
-  set_font(layout,"TakaoMincho", 12400);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  y = 3.9 * SCALE;
-  set_font(layout,"TakaoMincho", 12300);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  cairo_set_line_width(cr,1.0);
-  cairo_set_dash(cr,NULL,0,0);
-  cairo_set_source_rgba(cr,0.0,0.0,0.0,1.0);
-  cairo_rectangle(cr, 0.95 * SCALE, 2.75 * SCALE, (11.2) * SCALE, (0.9) * SCALE);
-  cairo_stroke(cr);
-
-  y = 5.0 * SCALE;
-  set_font(layout,"TakaoMincho", 12800 * 2);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
-
-  y = 7.0 * SCALE;
-  set_font(layout,"TakaoMincho", 12800 * 3);
-  y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+  for(i=0;i<20;i++) {
+    set_font(layout,"TakaoMincho", 20000 - i * 200);
+    y += draw_string(cr,layout,x,y,"あいうえおかきくけこさしすせそたちつてとなにぬねの");
+  }
 
   cairo_show_page(cr);
   cairo_surface_finish(surface);
