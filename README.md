@@ -1,9 +1,8 @@
 # test\_takao\_mincho
 
-It seems that pango font rendereing have a problem with font size on ubuntu 16.04.
+It seems that pango font rendereing have a problem with font size on ubuntu 16.10.
 I wrote small sample program.
-see output.(trusty|xenial).pdf.
-
+see output.(trusty|yaketty).pdf.
 
 ## build and execute
 
@@ -23,5 +22,5 @@ it needs follow deb packages.
 
 # pango-version
 
-* ubuntu 16.04 xenial - pango-1.38.1
+* ubuntu 16.10 yaketty - pango-1.40.1
 * ubuntu 14.04 trusty - pango-1.36.3
