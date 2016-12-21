@@ -67,6 +67,7 @@ draw_string(
     PangoRectangle extents;
     pango_layout_iter_get_line_extents (iter, NULL, &extents);
     yadv = (double)(extents.height + bline) / PANGO_SCALE;
+    fprintf(stderr,"%lf\n",(double)(1.0 * extents.width / PANGO_SCALE));
     cairo_move_to (cr, x, y - (double)bline / PANGO_SCALE);
     pango_layout_iter_free (iter);
   }
