@@ -1,8 +1,15 @@
 # test\_takao\_mincho
 
-It seems that pango font rendereing have a problem with font size on ubuntu 16.10.
+It seems that pango font rendereing have a problem with font size on ubuntu 16.10 and 16.04.
 I wrote small sample program.
+It render same japansese strings repeatedly,smaller and smaller.
+In ubuntu 16.04 trusty(freetype-2.5.2),glyphs rendererd bit by bit smaller,
+but in ubutun 16.10 yaketty, glyphs rendered same size at some lines.
+
 see output.(trusty|yaketty).pdf.
+
+What are the possible cause?
+I should what to do?
 
 ## build and execute
 
@@ -22,5 +29,5 @@ it needs follow deb packages.
 
 # pango-version
 
-* ubuntu 16.10 yaketty - pango-1.40.1
-* ubuntu 14.04 trusty - pango-1.36.3
+* ubuntu 16.10 yaketty - freetype-2.6.3
+* ubuntu 14.04 trusty  - freetype-2.5.2
