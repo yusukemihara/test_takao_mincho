@@ -26,8 +26,3 @@ it needs follow deb packages.
 * libpango1.0-dev
 * libpangocairo-1.0-0
 * fonts-takao
-
-# pango-version
-
-* ubuntu 16.10 yaketty - freetype-2.6.3
-* ubuntu 14.04 trusty  - freetype-2.5.2
