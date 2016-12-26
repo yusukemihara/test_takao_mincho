@@ -6,7 +6,7 @@ It render same japansese strings repeatedly,smaller and smaller.
 In ubuntu 16.04 trusty(freetype-2.5.2),glyphs rendererd bit by bit smaller,
 but in ubutun 16.10 yaketty, glyphs rendered same size at some lines.
 
-see output.(trusty|yaketty).pdf.
+see out.1404.pdf and out.1610.pdf.
 
 What are the possible cause?
 I should what to do?
